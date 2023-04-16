@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../../../../dspace-frontend"
+		},
+		{
+			"path": "../../../../../../../.."
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
