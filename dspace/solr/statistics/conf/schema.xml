@@ -105,8 +105,7 @@
 
     <!--Can either be view/search/search_result/workflow-->
     <field name="statistics_type" type="string" indexed="true" stored="true" required="true" default="view" docValues="true"/>
-
-    <!-- Search specific  -->
+     
     <field name="query" type="string" indexed="true" stored="true" required="false" multiValued="true" docValues="true"/>
     <field name="scopeType" type="integer" indexed="true" stored="true" required="false" />
     <field name="scopeId" type="string" indexed="true" stored="true" required="false" />
@@ -127,3 +126,7 @@
  <uniqueKey>uid</uniqueKey>
 
 </schema>
+
+
+
+

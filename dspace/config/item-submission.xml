@@ -33,9 +33,8 @@
              If you are using that demo dataset, you can simply uncomment the below configuration to enable Entity
              submission into all of the above Collections.
         -->
-        <!--
-        <name-map collection-handle="123456789/3" submission-name="Publication"/>
-        <name-map collection-handle="123456789/4" submission-name="Publication"/>
+        
+        <!-- <name-map collection-handle="123456789/4" submission-name="Publication"/>
         <name-map collection-handle="123456789/281" submission-name="Publication"/>
         <name-map collection-handle="123456789/5" submission-name="Publication"/>
         <name-map collection-handle="123456789/8" submission-name="OrgUnit"/>
@@ -46,7 +45,8 @@
         <name-map collection-handle="123456789/28" submission-name="Journal"/>
         <name-map collection-handle="123456789/29" submission-name="JournalVolume"/>
         <name-map collection-handle="123456789/30" submission-name="JournalIssue"/>
-        -->
+        <name-map collection-handle="123456789/69" submission-name="Person"/> -->
+       
     </submission-map>
 
 
@@ -248,7 +248,7 @@
             <step id="traditionalpagetwo"/>
 
             <!-- Uncomment this step to allow the user to embargo or access restrict the entire item -->
-            <!-- <step id="itemAccessConditions"/> -->
+            <step id="itemAccessConditions"/>
 
             <!-- Uncomment this step to show when appropriate publisher policies retrieved from SHERPA/RoMEO -->
             <!-- <step id="sherpaPolicies"/> -->
@@ -278,6 +278,7 @@
             <step id="traditionalpagetwo"/>
             <step id="upload"/>
             <step id="license"/>
+            <step id="itemAccessConditions"/>
         </submission-process>
 
         <!--
@@ -355,7 +356,7 @@
             <step id="openAIREPublicationPagetwoForm"/>
 
             <!--Step will be to Upload the item -->
-            <!-- step id="upload-with-embargo"/-->
+            <!--step id="upload-with-embargo"/-->
             <step id="upload"/>
 
             <!--Step will be to Sign off on the License -->

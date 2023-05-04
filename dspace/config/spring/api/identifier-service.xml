@@ -111,7 +111,7 @@
          When generateDataciteXML is enabled, EZIDIdentifierProvider uses
          dspace.cfg:crosswalk.dissemination.DataCite.stylesheet XSL configuration for metadata mapping
     -->
-    <!-- Uncomment to enable DOI using EZID
+    <!-- Uncomment to enable DOI using EZID  ## gvssai start
     <bean id="org.dspace.identifier.EZIDIdentifierProvider"
           class="org.dspace.identifier.EZIDIdentifierProvider"
           scope='singleton'>
@@ -144,7 +144,7 @@
         <property name='generateDataciteXML' value='false'/>
         <property name='disseminationCrosswalkName' value='DataCite'/>
 
-    </bean>
-    -->
+    </bean>  # end -->
+    
 
 </beans>

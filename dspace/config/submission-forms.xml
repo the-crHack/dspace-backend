@@ -51,15 +51,63 @@
         <!-- Form which defines the first page/section of the "traditional" DSpace submission process,
              often used when depositing normal Items (i.e. Items which are not Entities). -->
         <form name="traditionalpageone">
-            <row>
+            <!-- <row>
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>contributor</dc-element>
                     <dc-qualifier>author</dc-qualifier>
                     <repeatable>true</repeatable>
                     <label>Author</label>
-                    <input-type>onebox</input-type>
+                    <input-type>name</input-type>
                     <hint>Enter the author's name (Family name, Given names).</hint>
+                    <required></required>
+                </field>
+            </row> -->
+            
+            <row>
+                <relation-field>
+                    <relationship-type>isAuthorOfPublication</relationship-type>
+                    <search-configuration>person</search-configuration>
+                    <repeatable>true</repeatable>
+                    <name-variants>true</name-variants>
+                    <label>Author</label>
+                    <hint>Enter the author's name (Family name, Given names).</hint>
+                    <linked-metadata-field>
+                        <dc-schema>dc</dc-schema>
+                        <dc-element>contributor</dc-element>
+                        <dc-qualifier>author</dc-qualifier>
+                        <input-type>onebox</input-type>
+                    </linked-metadata-field>
+                    <externalsources>orcid</externalsources>
+                    <required></required> 
+               </relation-field>
+            </row>
+              <!-- You may choose to validate author names via a Regular Expression if it's appropriate for
+                         your institution. The below regex requires a comma to be present in the author field.
+                         However, this is disabled by default to support organizations as authors, etc.
+                    <regex>\w+(,)+\w+</regex> -->
+         
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>editor</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Editor</label>
+                    <input-type>name</input-type>
+                    <hint>Enter the editor's name (Family name, Given names).</hint>
+                    <required></required>
+                </field>
+            </row>
+            <row>
+                <field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>contributor</dc-element>
+                    <dc-qualifier>advisor</dc-qualifier>
+                    <repeatable>true</repeatable>
+                    <label>Advisor</label>
+                    <input-type>name</input-type>
+                    <hint>Enter the advisor's name (Family name, Given names).</hint>
                     <required></required>
                 </field>
             </row>
@@ -244,7 +292,7 @@
              'traditionalpageone' form. The only difference is the Author field can be used to link the
              Publication Entity to a Person Entity. -->
         <form name="publicationStep">
-            <row>
+           <row>
                 <relation-field>
                     <relationship-type>isAuthorOfPublication</relationship-type>
                     <search-configuration>person</search-configuration>
@@ -259,11 +307,12 @@
                     </linked-metadata-field>
                     <externalsources>orcid</externalsources>
                     <required></required>
+                    <!-- <controlled-vocabulary>srsc</vocabulary> -->
                     <!-- You may choose to validate author names via a Regular Expression if it's appropriate for
                          your institution. The below regex requires a comma to be present in the author field.
                          However, this is disabled by default to support organizations as authors, etc. -->
                     <!--<regex>\w+(,)+\w+</regex>-->
-                </relation-field>
+               </relation-field> 
             </row>
             <row>
                 <field>
@@ -1397,6 +1446,10 @@
                 <displayed-value>Animation</displayed-value>
                 <stored-value>Animation</stored-value>
             </pair>
+              <pair>
+                <displayed-value>Phd Thesis</displayed-value>
+                <stored-value>Phd Thesis</stored-value>
+            </pair>
             <pair>
                 <displayed-value>Article</displayed-value>
                 <stored-value>Article</stored-value>
@@ -1989,3 +2042,6 @@
     </form-value-pairs>
 
 </input-forms>
+
+
+
